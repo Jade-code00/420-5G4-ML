@@ -1,6 +1,7 @@
 import customtkinter as ctk
 import sys
 from gui.book import BookManagementScreen
+from gui.user import UserManagementScreen
 
 class LibrarySystem(ctk.CTk):
     def __init__(self):
@@ -49,8 +50,10 @@ class LibrarySystem(ctk.CTk):
         self.book_screen.pack(fill="both", expand=True)
         
     def open_user_management(self):
-        # Placeholder pour ouvrir la gestion des utilisateurs
-        pass
+        self.main_frame.pack_forget()
+
+        self.user_screen = UserManagementScreen(self)
+        self.user_screen.pack(fill="both", expand=True)
         
     def open_borrow_management(self):
         # Placeholder pour ouvrir la gestion des emprunts
